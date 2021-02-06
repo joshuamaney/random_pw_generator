@@ -7,30 +7,47 @@ var lowerCaseOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 var numberOptions = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharOptions = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "[", "{", "]", "}", ";", ":", ",", "<", ".", ">", "?"];
 
-// Random choice from arrays
-var upperCaseIndex = Math.floor(Math.random() * upperCaseOptions.length);
-var userChoiceUpper = upperCaseOptions[upperCaseIndex];
-console.log(userChoiceUpper);
+generatePassword()
 
-var lowerCaseIndex = Math.floor(Math.random() * lowerCaseOptions.length);
-var userChoiceLower = lowerCaseOptions[lowerCaseIndex];
-console.log(userChoiceLower);
-
-var numberIndex = Math.floor(Math.random() * numberOptions.length);
-var userChoiceNumber = numberOptions[numberIndex];
-console.log(userChoiceNumber);
-
-var specialCharIndex = Math.floor(Math.random() * specialCharOptions.length);
-var userChoiceSpecialChar = specialCharOptions[specialCharIndex];
-console.log(userChoiceSpecialChar);
- 
+function generatePassword() {
 // user selection
-var lengthChoice = window.prompt("choose a password length from 8-128 characters ");
-var upperChoice = window.confirm("Would you like to include upper case letters?");
-var lowerChoice = window.confirm("Would you like to include lower case letters?");
-var numberChoice = window.confirm("Would you like to include numbers?");
-var specialCharChoice = window.confirm("Would you like to include special characters?");
+var choiceLength = window.prompt("choose a password length between 8-128 characters");
+var userChoiceLength = choiceLength;
+console.log(userChoiceLength);
 
+if (userChoiceLength >= 8 && userChoiceLength <= 128) {
+
+  var upperChoice = window.confirm("Would you like to include upper case letters?");
+  // Random choice from arrays
+  var upperCaseIndex = Math.floor(Math.random() * upperCaseOptions.length);
+  var userChoiceUpper = upperCaseOptions[upperCaseIndex];
+  console.log(userChoiceUpper);
+
+  var lowerChoice = window.confirm("Would you like to include lower case letters?");
+  var lowerCaseIndex = Math.floor(Math.random() * lowerCaseOptions.length);
+  var userChoiceLower = lowerCaseOptions[lowerCaseIndex];
+  console.log(userChoiceLower);
+
+  var numberChoice = window.confirm("Would you like to include numbers?");
+  var numberIndex = Math.floor(Math.random() * numberOptions.length);
+  var userChoiceNumber = numberOptions[numberIndex];
+  console.log(userChoiceNumber);
+
+  var specialCharChoice = window.confirm("Would you like to include special characters?");
+  var specialCharIndex = Math.floor(Math.random() * specialCharOptions.length);
+  var userChoiceSpecialChar = specialCharOptions[specialCharIndex];
+  console.log(userChoiceSpecialChar);
+
+} else {
+  var invalidLength = window.confirm("You must choose a password length between 8 and 128 characters");
+
+  if (invalidLength) {
+    generatePassword();
+  }
+
+}
+}
+ 
 
 
 // Write password to the #password input
