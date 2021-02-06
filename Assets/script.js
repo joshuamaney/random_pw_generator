@@ -7,6 +7,7 @@ var lowerCaseOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 var numberOptions = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharOptions = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "[", "{", "]", "}", ";", ":", ",", "<", ".", ">", "?"];
 
+// Random choice from arrays
 var upperCaseIndex = Math.floor(Math.random() * upperCaseOptions.length);
 var userChoiceUpper = upperCaseOptions[upperCaseIndex];
 console.log(userChoiceUpper);
@@ -22,6 +23,13 @@ console.log(userChoiceNumber);
 var specialCharIndex = Math.floor(Math.random() * specialCharOptions.length);
 var userChoiceSpecialChar = specialCharOptions[specialCharIndex];
 console.log(userChoiceSpecialChar);
+ 
+// user selection
+var lengthChoice = window.prompt("choose a password length from 8-128 characters ");
+var upperChoice = window.confirm("Would you like to include upper case letters?");
+var lowerChoice = window.confirm("Would you like to include lower case letters?");
+var numberChoice = window.confirm("Would you like to include numbers?");
+var specialCharChoice = window.confirm("Would you like to include special characters?");
 
 
 
