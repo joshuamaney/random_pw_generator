@@ -2,9 +2,6 @@
 
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword() {
-
-
 // Array of options for computer to choose from
 var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -16,6 +13,8 @@ var specialCharArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "[", "
 
 var resultArray = [];
 var choiceArray = [];
+
+function generatePassword() {
 
 // user selection
 var choiceLength = window.prompt("choose a password length between 8-128 characters");
@@ -39,9 +38,7 @@ var choiceLength = window.prompt("choose a password length between 8-128 charact
 
     if (specialCharChoice) {
       resultArray = resultArray.concat(specialCharArray);
-    } 
-
-    if (!upperChoice && !lowerChoice && !numberChoice && !specialCharChoice) {
+    } else {
       window.alert("You must select at least one option");
     }
 
@@ -53,11 +50,9 @@ var choiceLength = window.prompt("choose a password length between 8-128 charact
   } else {
     window.alert("Invalid selection. You must choose a length between 8 and 128 characters");
   }
+
 }
  
-
-
-
 
 // Write password to the #password input
 function writePassword() {
