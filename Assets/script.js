@@ -43,7 +43,6 @@ var choiceLength = window.prompt("choose a password length between 8-128 charact
 
     if (!upperChoice && !lowerChoice && !numberChoice && !specialCharChoice) {
       window.alert("You must select at least one option");
-      generatePassword();
     }
 
     for (var i = 0; i < choiceLength; i++) {
