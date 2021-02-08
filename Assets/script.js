@@ -19,15 +19,14 @@ var choiceArray = [];
 
 // user selection
 var choiceLength = window.prompt("choose a password length between 8-128 characters");
+  if (choiceLength < 8 || choiceLength > 128) {
+    window.alert("Password length invalid. You must choose a value between 8 and 128");
+    generatePassword();
+  }
 var upperChoice = window.confirm("Would you like to include upper case letters?");
 var lowerChoice = window.confirm("Would you like to include lower case letters?");
 var numberChoice = window.confirm("Would you like to include numbers?");
 var specialCharChoice = window.confirm("Would you like to include special characters?");
-
-if (choiceLength < 8 || choiceLength > 128) {
-  window.alert("Password length invalid. You must choose a value between 8 and 128");
-  generatePassword();
-}
 
 if (upperChoice) {
   resultArray = resultArray.concat(uppercaseArray);
