@@ -50,7 +50,7 @@ var specialCharChoice = window.confirm("Would you like to include special charac
   }
 
   for (var i = 0; i < choiceLength; i++) {
-    choiceArray.push (resultArray[Math.floor(Math.random() * resultArray.length)])
+    choiceArray.push (resultArray[Math.floor(Math.random() * choiceArray.length)])
   }
   return choiceArray.join("");
   }
