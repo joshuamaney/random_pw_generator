@@ -22,37 +22,38 @@ var choiceLength = window.prompt("choose a password length between 8-128 charact
   if (choiceLength < 8 || choiceLength > 128) {
     window.alert("Password length invalid. You must choose a value between 8 and 128");
     generatePassword();
-  }
+  } else {
 var upperChoice = window.confirm("Would you like to include upper case letters?");
 var lowerChoice = window.confirm("Would you like to include lower case letters?");
 var numberChoice = window.confirm("Would you like to include numbers?");
 var specialCharChoice = window.confirm("Would you like to include special characters?");
 
-if (upperChoice) {
-  resultArray = resultArray.concat(uppercaseArray);
-}
+  if (upperChoice) {
+    resultArray = resultArray.concat(uppercaseArray);
+  }
 
-if (lowerChoice) {
-  resultArray = resultArray.concat(lowercaseArray);
-}
+  if (lowerChoice) {
+    resultArray = resultArray.concat(lowercaseArray);
+  }
 
-if (numberChoice) {
-  resultArray = resultArray.concat(numberArray);
-}
+  if (numberChoice) {
+    resultArray = resultArray.concat(numberArray);
+  }
 
-if (specialCharChoice) {
-  resultArray = resultArray.concat(specialCharArray);
-} 
+  if (specialCharChoice) {
+    resultArray = resultArray.concat(specialCharArray);
+  } 
 
-if (!upperChoice && !lowerChoice && !numberChoice && !specialCharChoice) {
-  window.alert("You must select at least one option");
-  generatePassword();
-}
+  if (!upperChoice && !lowerChoice && !numberChoice && !specialCharChoice) {
+    window.alert("You must select at least one option");
+    generatePassword();
+  }
 
-for (var i = 0; i < choiceLength; i++) {
-  choiceArray.push (resultArray[Math.floor(Math.random() * resultArray.length)])
-}
-return choiceArray.join("");
+  for (var i = 0; i < choiceLength; i++) {
+    choiceArray.push (resultArray[Math.floor(Math.random() * resultArray.length)])
+  }
+  return choiceArray.join("");
+  }
 }
 
 
