@@ -10,4 +10,4 @@ The user can select any number of these options with which to create their passw
 
 Once the password variables are selected, a new, secure password will appear in the text box provided for the user to copy.
 
-![gif of the password generator in action](Assets.PWGEN.gif)
+![gif of the password generator in action](/Assets/PWGEN.gif)
